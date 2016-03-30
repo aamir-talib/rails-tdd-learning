@@ -4,18 +4,17 @@ class Ability
 
   def initialize(user)
     @user = user || User.new # for guest
-    @user.roles.each { |role| send(role.name.downcase) }
+    @user.roles.each { |role| send(role.downcase) }
     if @user.new_record?
       guest
     end
   end
 
   def owner
-    can :manage, :all
+    can :index, :dashboard
   end
 
   def admin
-    can :manage, :all
   end
 
   def teacher
@@ -25,7 +24,6 @@ class Ability
   end
 
   def banned
-    cannot :manage, :all
   end
 
   def guest

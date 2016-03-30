@@ -1,0 +1,8 @@
+- content_for :page_header
+  .page-header
+    h1 Select Dashboard
+
+
+- if user_signed_in?
+  - current_user.roles.each do |role|
+    = link_to role, url_for(role: role)

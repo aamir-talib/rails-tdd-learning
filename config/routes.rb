@@ -59,6 +59,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'home/profile', to: 'home#profile', as: 'home/profile'
+  get 'home/profile'            , to: 'home#profile'                  , as: 'home/profile'
+  get 'dashboard/(:role)'       , to: 'dashboard#index'               , as: 'dashboard/index'
 
 end

@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  before_action :authenticate_user!, except: :index
+  authorize_resource class: false, except: :index
 
   def index
 
