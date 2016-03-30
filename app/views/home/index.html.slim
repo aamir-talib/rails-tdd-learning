@@ -1,11 +1,6 @@
-pre
-  - unless user_signed_in?
-    = link_to 'login', new_user_session_path
-  - else
-    = link_to 'profile', home_profile_path
-    | |
-    = link_to 'logout', destroy_user_session_path, method: :delete
+- content_for :page_header
+  .page-header
+    h1 Rails TDD Learning
 
-hr
-
-h1 Rails TDD Learning
+.jumbotron
+  h1 Welcome

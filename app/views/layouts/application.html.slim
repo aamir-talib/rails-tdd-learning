@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title
+      = content_for?(:title) ? yield(:title) : 'Rails Tdd Learning'
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Rails Tdd Learning'}"
+    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => true
+    == javascript_include_tag 'application', 'data-turbolinks-track' => true
+    == csrf_meta_tags
+  body
+    header
+      == render 'layouts/navigation'
+    main[role="main"]
+        .col-xs-2.col-sm-3.col-md-2.sidebar
+          == render 'layouts/sidebar'
+        .col-xs-10.col-sm-9.col-md-10
+          == yield :page_header
+          == render 'layouts/messages'
+          == yield

@@ -44,10 +44,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  # MailCatcher runs a super simple SMTP server which catches any message sent to it to display in a web interface
-  gem 'mailcatcher', '~> 0.6.1'
+
+  gem 'mailcatcher'       , '~> 0.6.1'
+  gem 'rails_layout'
+  gem 'better_errors'
 end
 
-gem 'devise', '~> 3.5', '>= 3.5.6'
-
-gem 'slim-rails', '~> 3.0', '>= 3.0.1'
+gem 'devise'              , '~> 3.5'        , '>= 3.5.6'
+gem 'slim-rails'          , '~> 3.0'        , '>= 3.0.1'
+gem 'bootstrap-sass'      , '~> 3.3.6'

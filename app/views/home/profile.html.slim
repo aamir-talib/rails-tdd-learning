@@ -1,13 +1,9 @@
-pre
-  = link_to 'home', root_path
-  | |
-  = link_to 'logout', destroy_user_session_path, method: :delete
-hr
+- content_for :page_header
+  .page-header
+    h1 Profile
 
-
-
-h1 User Summary
+h2 User Summary
 pre = JSON.pretty_generate(@user.as_json)
 
-h1 User Detail
+h2 User Detail
 code = @user.attributes
