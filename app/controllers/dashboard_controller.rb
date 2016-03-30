@@ -3,10 +3,15 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
   authorize_resource class: false
 
+  before_action :set_user
+
 
   def index
     role = params[:role]
-    render "dashboard/index_#{role}" if role rescue nil
+    if (role && @user.roles.include?(role))
+      render "dashboard/index_#{role}" rescue nil
+      return
+    end
   end
 
 

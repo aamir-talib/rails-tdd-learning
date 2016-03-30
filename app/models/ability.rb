@@ -11,16 +11,19 @@ class Ability
   end
 
   def owner
-    can :index, :dashboard
+    can_access_dashboard
   end
 
   def admin
+    can_access_dashboard
   end
 
   def teacher
+    can_access_dashboard
   end
 
   def student
+    can_access_dashboard
   end
 
   def banned
@@ -28,4 +31,11 @@ class Ability
 
   def guest
   end
+
+  private
+
+  def can_access_dashboard
+    can :index, :dashboard
+  end
+
 end
