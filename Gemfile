@@ -45,11 +45,12 @@ group :development do
   gem 'spring'
 
 
-  gem 'mailcatcher'       , '~> 0.6.1'
-  gem 'rails_layout'
-  gem 'better_errors'
+  gem 'mailcatcher'       , '~> 0.6.4'
+  gem 'rails_layout'      , '~> 1.0'        , '>= 1.0.29'
+  gem 'better_errors'     , '~> 2.1'        , '>= 2.1.1'
 end
 
 gem 'devise'              , '~> 3.5'        , '>= 3.5.6'
+gem 'cancan'              , '~> 1.6'        , '>= 1.6.10'
 gem 'slim-rails'          , '~> 3.0'        , '>= 3.0.1'
-gem 'bootstrap-sass'      , '~> 3.3.6'
+gem 'bootstrap-sass'      , '~> 3.3'        , '>= 3.3.6'
