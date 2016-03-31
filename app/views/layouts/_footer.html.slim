@@ -1,0 +1,10 @@
+span.text-muted Copyright &copy; #{Time.now.year} Rails TDD Learning
+
+.pull-right.text-muted
+  - if user_signed_in?
+    | #{current_user.email} : &nbsp;
+    - current_user.roles.each do |role|
+      span.label.label-default = role
+      | &nbsp;
+  - else
+    | You are viewing this application as guest

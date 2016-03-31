@@ -1,0 +1,9 @@
+- content_for :page_header
+  .page-header
+    h1 Profile
+
+h2 User Summary
+pre = JSON.pretty_generate(@user.as_json)
+
+h2 User Detail
+code = @user.attributes
